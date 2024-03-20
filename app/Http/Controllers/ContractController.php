@@ -21,8 +21,8 @@ class ContractController extends Controller
         }
 
         return response()->json([
-            'message' => 'Contract returned.',
-            'data' => Contract::all()->makeHidden($hidden),
+            'message' => 'Employee returned.',
+            'data' => Employee::with('contract')->get()->makeHidden($hidden),
         ]);
 
     }
